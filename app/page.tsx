@@ -53,7 +53,7 @@ export default function Home() {
       const data = await response.json()
 
       if (response.ok) {
-        setSuccess(`Image uploaded successfully! Reference ID: ${data.referenceId}`)
+        setSuccess(`Uploaded successfully!\nReference ID: ${data.referenceId}`);
         setPreview(null)
         setFile(null)
         if (fileInputRef.current) fileInputRef.current.value = ''
@@ -123,7 +123,7 @@ export default function Home() {
         />
 
         {success && (
-          <div className="mt-4 p-4 bg-green-100 border border-green-300 rounded-lg text-green-700">
+          <div className="mt-4 p-4 bg-green-100 border border-green-300 rounded-lg text-green-700 whitespace-pre-line">
             {success}
           </div>
         )}
@@ -133,12 +133,6 @@ export default function Home() {
             {error}
           </div>
         )}
-
-        <div className="mt-6 text-center">
-          <a href="/admin" className="text-indigo-600 hover:text-indigo-800 font-medium">
-            Admin Panel →
-          </a>
-        </div>
       </div>
     </div>
   )
